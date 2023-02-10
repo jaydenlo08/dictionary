@@ -3,7 +3,9 @@
     <head>
         <title>Dictionary</title>
         <link rel="icon" href="favicon.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="data.js" type="text/javascript"></script>
         <script src="stardict.js" type="text/javascript"></script>
         <script src="dictzip.js" type="text/javascript"></script>
         <script src="pako_inflate.js" type="text/javascript"></script>
@@ -194,11 +196,11 @@
                         suggestions.style.display = "block";
                     } else {
                         suggestions.style.display = "none";
-                    }
+                    };
                 } else {
                     suggestions.style.display = "none";
-                }
-            })
+                };
+            });
             // Load dictionary when file uploaded
             upload.addEventListener("change", function(e) {
                 loadDict(e.target.files);
@@ -226,25 +228,17 @@
                     };
                 };
                 // Mode switcher
-                if ($_GET['lang'] == "Latin") {
-                    loadFiles("LewisShort1879").then(fileList => {
-                        loadDict(fileList); // Load file
-                    })
-                } else if ($_GET['lang'] == "Greek") {
-                    loadFiles("LiddellScott1940", true).then(fileList => {
-                        loadDict(fileList); // Load file
-                    })
-                } else if ($_GET['lang'] == "English") {
-                    loadFiles("Oxford_Advanced_Learner_s_Dictionary").then(fileList => {
-                        loadDict(fileList); // Load file
-                    })
-                } else if ($_GET['lang'] == "Abbreviations") {
-                    loadFiles("Elliott1998").then(fileList => {
-                        loadDict(fileList); // Load file
-                    })
-                } else {
-                    upload.style.display = "block" // Show upload button
-                }
+                // languages is a constant specified in data.js as an object
+                for (var language in languages) {
+                    // Check if current language exists as a key in the object
+                    if ($_GET['lang'] == language) {
+                        loadFiles(languages[language]).then(fileList => {
+                            loadDict(fileList); // Load file
+                        });
+                    } else {
+                        upload.style.display = "block" // Show upload button
+                    };
+                };
             });
 
             // Detect click outside input box and suggestions
@@ -275,7 +269,7 @@
                     });
                 };
                 return(fileList); // Returns file list
-            }
+            };
 
             /** 
              * Load dictionary from files and saves the index into 'index' variable
