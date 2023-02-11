@@ -3,7 +3,7 @@
 ### An online dictionary reader for StarDict format
 
 ## Why?
-In my school, learning Latin is compulsory for Year 9, which I am currently in, and I also take Ancient Greek. I couldn't find any good online dictionaries that is helpful for me, and the good ones (and also ancient ones) are only available in StarDict format. My school (stupidly) blocks app installation on their laptops, so I cannot use GoldenDictm, and started making my own web version of it when I was really bored. (bording school can be boring)
+In my school, learning Latin is compulsory for Year 9, which I am currently in, and I also take Ancient Greek. I couldn't find any good online dictionaries that is helpful for me, and the good ones (and also ancient ones) are only available in StarDict format. My school (stupidly) blocks app installation on their laptops, so I cannot use GoldenDictm, and started making my own web version of it when I was really bored. (bording school can be boring).
 
 ## How to use?
 If you already have some StarDict files (.dict.dz, .idx, .ifo, .syn), just simply open index.html with a web browser and upload the files.
@@ -46,9 +46,11 @@ const languages = {
 http://localhost/dictionary/?lang=English
 ```
 
-## Libraries used
+## Credits
 Many thanks for those who made the following libraries. This project wouldn't be possible without their hard work.
 
-* [stardict.js](https://framagit.org/tuxor1337/stardict.js) - tuxor1337
-* [dictzip.js](https://framagit.org/tuxor1337/dictzip.js) - tuxor1337
-* [pako](https://github.com/nodeca/pako) - nodeca
+* [stardict.js](https://framagit.org/tuxor1337/stardict.js) - @tuxor1337
+* [dictzip.js](https://framagit.org/tuxor1337/dictzip.js) - @tuxor1337
+* [pako](https://github.com/nodeca/pako) - @nodeca
+* [favicon.png](https://github.com/goldendict/goldendict/blob/master/icons/icon32_sdict.png) - GoldenDict icons
+* [Latin & Greek dictionaries](https://latin-dict.github.io/) that I use - [latin-dict.github.io](https://latin-dict.github.io/) & [Perseus Digital Library](http://www.perseus.tufts.edu/)
