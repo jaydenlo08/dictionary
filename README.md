@@ -45,6 +45,7 @@ const languages = {
 ```
 http://localhost/dictionary/?lang=English
 ```
+6. It might take a while to load download the dictionaries, so please be patient.
 
 ## Credits
 Many thanks for those who made the following libraries. This project wouldn't be possible without their hard work.

@@ -1,6 +1,18 @@
 const languages = {
-    English: "Oxford_Advanced_Learner_s_Dictionary",
-    Greek: "LiddellScott1940",
-    Latin: "LewisShort1879",
-    Abbreviations: "Elliott1998",
-}
+    English: {
+        name: "Oxford_Advanced_Learner_s_Dictionary",
+        synonyms: false,
+    },
+    Greek: {
+        name: "LiddellScott1940",
+        synonyms: true,
+    },
+    Latin: {
+        name: "LewisShort1879",
+        synonyms: false,
+    },
+    Abbreviations: {
+        name: "Elliott1998",
+        synonyms: false,
+    },
+};

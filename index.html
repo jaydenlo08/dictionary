@@ -240,10 +240,18 @@
                     if ($_GET['lang'] == language) {
                         document.getElementById("loadIcon").style.display = "block"; // Show loading icon
                         upload.style.display = "none" // Show upload button
-                        loadFiles(languages[language]).then(fileList => {
-                            loadDict(fileList); // Load file
-                            document.getElementById("loadIcon").style.display = "none"; // Hide loading icon
-                        });
+                        // Check if that language contains synonyms
+                        if (languages[language].synonyms) {
+                            loadFiles(languages[language].name, true).then(fileList => {
+                                loadDict(fileList); // Load file
+                                document.getElementById("loadIcon").style.display = "none"; // Hide loading icon
+                            });
+                        } else {
+                            loadFiles(languages[language].name).then(fileList => {
+                                loadDict(fileList); // Load file
+                                document.getElementById("loadIcon").style.display = "none"; // Hide loading icon
+                            });
+                        }
                     }
                 };
                 // If no language specified show upload
@@ -295,7 +303,6 @@
                 };
                 console.log("Loading files...");
                 dict.load(file_array).then(() => { // Load dictionary from files
-                    console.log(dict.keyword("bookname")); // Prints dictionary name in console
                     bookname.innerHTML = dict.keyword("bookname"); // Show dictionary name
                     document.title = dict.keyword("bookname"); // Change title to dictionary name
                     searchBox.placeholder = 'Search ' + dict.keyword("bookname");
