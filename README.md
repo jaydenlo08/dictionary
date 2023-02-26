@@ -1,6 +1,6 @@
 # Dictionary
 
-### An online dictionary reader for StarDict format
+### A dictionary reader for StarDict format with web interface
 
 ## Why?
 In my school, learning Latin is compulsory for Year 9, which I am currently in, and I also take Ancient Greek. I couldn't find any good online dictionaries that is helpful for me, and the good ones (and also ancient ones) are only available in StarDict format. My school (stupidly) blocks app installation on their laptops, so I cannot use GoldenDictm, and started making my own web version of it when I was really bored. (bording school can be boring).
