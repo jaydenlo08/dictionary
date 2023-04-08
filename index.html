@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Dictionary</title>
         <link rel="icon" href="favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <meta charset="utf-8">
+
         <script src="data.js" type="text/javascript"></script>
         <script src="libraries/stardict.js" type="text/javascript"></script>
         <script src="libraries/dictzip.js" type="text/javascript"></script>
@@ -147,7 +148,7 @@
         <h1 id="bookname"></h1>
         <div id="search" style="display: none">
             <div id="inputContainer">
-                <button id="searchButton" onclick="searchDict(searchBox.value)">
+                <button id="searchButton" onclick="searchDict(searchBox.value)" title="Search">
                     <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path fill="grey" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
                     </svg>
@@ -175,13 +176,19 @@
             var optionSelected = false;
 
             // Search when enter key pressed
-            searchBox.addEventListener("keypress", (e) => {
+            searchBox.addEventListener("keydown", (e) => {
                 // If the user presses the "Enter" key on the keyboard
                 if (e.key === "Enter") {
                     // Cancel the default action, if needed
                     e.preventDefault();
                     // Trigger the button element with a click
                     searchButton.click();
+                };
+                if (e.key === "Escape") {
+                    // Cancel the default action, if needed
+                    e.preventDefault();
+                    // Hide the suggestion list
+                    suggestions.style.display = "none";
                 };
             });
             searchBox.addEventListener("input", (e) => {
