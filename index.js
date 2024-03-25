@@ -117,14 +117,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             };
             request.onsuccess = function(event) {
-                savePromise.then(() => {
+                if (!savePromise) {
                     db = event.target.result;
-
                     loadDB(db).then(fileList => {
                         loadDict(fileList);
                         document.getElementById("loadIcon").style.display = "none"; // Hide loading icon
                     });
-                });
+                } else {
+                    savePromise.then(() => {
+                        db = event.target.result;
+                        loadDB(db).then(fileList => {
+                            loadDict(fileList);
+                            document.getElementById("loadIcon").style.display = "none"; // Hide loading icon
+                        });
+                    });
+                }
             };
         }
     };
