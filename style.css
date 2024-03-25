@@ -1,0 +1,85 @@
+body {
+    font-family: "Helvetica", "Helvetica", "sans-serif";
+}
+svg {
+    display: block;
+}
+h1 {
+    text-align: center;
+}
+#upload {
+    display: none;
+}
+#searchButton {
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+}
+#searchBox {
+    border: transparent;
+    background: transparent;
+    outline: none;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+#searchBox:placeholder-shown {
+    text-overflow: ellipsis;
+}
+#inputContainer {
+    grid-template-columns: 30px auto;
+    border: 1px solid grey;
+    border-radius: 3vmin;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 80%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: grid;
+    position: relative;
+    z-index: 2;
+}
+#search {
+    width: 100%;
+    z-index: 2;
+}
+#suggestions {
+    display: none;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    overflow: auto;
+    margin: auto;
+    width: 80%;
+    max-height: 500px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 3vmin;
+    z-index: 2;
+}
+.suggestion {
+    padding: 10px 16px;
+    transition: 0.1s;
+}
+.suggestion:hover {
+    background-color: #ddd;
+}
+#backgroundOverlay {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#loadIcon {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

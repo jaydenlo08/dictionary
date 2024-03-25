@@ -15,4 +15,8 @@ const languages = {
         name: "Elliott1998",
         synonyms: false,
     },
+    French: {
+        name: "FrenchWiktionary",
+        synonyms: true,
+    }
 };

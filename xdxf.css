@@ -1,0 +1,46 @@
+/******** XDXF markup classes *********/
+
+/* Key -- keys shouldn't normally be present in the article's body since they
+* are accounted for separately, hence we hide them */
+.xdxf_k {
+    display: none;
+}
+/* ...and if there's a break after it, we hide it too so we don't have an
+* extra vertical spacing. */
+.xdxf_k + br {
+    display: none;
+}
+/* Abbreviation */
+.xdxf_abr {
+    font-style: italic;
+    color: green;
+}
+/* Color-highlighted */
+.xdxf_c {
+    color: blue;
+}
+/* Example */
+.xdxf_ex {
+    color: grey;
+    /* display: block; */
+    /* margin: 8px; */
+}
+/* Appearance-only tag */
+.xdxf_nu {
+    color: red;
+}
+/* Transcription */
+.xdxf_tr:before {
+    content:"[";
+}
+.xdxf_tr:after {
+    content:"]";
+}
+.xdxf_tr {
+    font-weight: bold;
+}
+/* Resource reference -- for now just a span. Since there's not yet a mechanism
+* to load resources off XDXF articles in GoldenDict, we just hide them. */
+.xdxf_rref {
+    display: none;
+}
